@@ -1,11 +1,16 @@
 const loadAllData = () =>{
     const URL =`https://openapi.programming-hero.com/api/ai/tools`
+    const spinnerContainer = document.getElementById('spinner');
+    spinnerContainer.classList.remove('hidden')
 
     fetch(URL)
     .then(res => res.json())
     .then((data) => {
+    spinnerContainer.classList.add('hidden')
          showData(data)
+
     });
+
 
 };
 
