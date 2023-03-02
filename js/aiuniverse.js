@@ -4,14 +4,14 @@ const loadAllData = () =>{
     fetch(URL)
     .then(res => res.json())
     .then((data) => {
-         showAllData(data)
+         showData(data)
     });
 
 };
 
 
-const showAllData = (datas) =>{
-//   console.log(datas.data.tools[0]);
+const showData = (datas) =>{
+  console.log(datas.data);
 const conatiner = document.getElementById('card-container');
 
   (datas.data.tools).slice(0,6).forEach((tool)=>{
@@ -28,19 +28,22 @@ const conatiner = document.getElementById('card-container');
               <h2 class="card-title font-bold">Features</h2>
               
               <ul class="text-start  list-decimal ml-4">
-                <li>${tool.features[0] ? tool.features[0] : "Features Not Found"}</li>
+                <li>${tool.features ? tool.features[0] : "Features Not Found"}</li>
                 <li>${tool.features[1] ? tool.features[1] : "Features Not Found"}</li>
                 <li>${tool.features[2] ? tool.features[2] : "Features Not Found"}</li>
               </ul>
               <hr class="" style="height:2px;background-color:rgb(192, 187, 187);">
 
-              <p class="text-start font-bold text-3xl">${tool.name}</p>
+              
 
-              <div class="flex">
-                <p class="text-start pt-2"> <span class=""><i class="fa-solid fa-calendar-day"></i></span> ${tool.published_in ? tool.published_in : "Date Not Found"}</p>
-                <div class="text-center w-10 h-10 bg-pink-300 rounded-full">
-                <i class="fa-solid fa-arrow-right mt-3"></i>
-                </div>
+              <div class="flex justify-between items-center ">
+              <div class="text-start">
+              <p class=" font-bold text-3xl mt-4">${tool.name}</p>
+                <p class="text-start mt-4"> <span class=""><i class="fa-solid fa-calendar-day"></i></span> ${tool.published_in ? tool.published_in : "Date Not Found"}</p>
+              </div>
+                
+                <button onclick="ShowDetailsData()" class="btn btn-secondary rounded-full mt-5"><i class="fa-solid fa-arrow-right"></i></button>
+ 
               </div>
             </div>
           </div>
@@ -48,6 +51,18 @@ const conatiner = document.getElementById('card-container');
     `;
     conatiner.appendChild(div);
   })
+ }
+
+ const  showAllData = () => {
+    const URL =`https://openapi.programming-hero.com/api/ai/tools`
+
+    fetch(URL)
+    .then(res => res.json())
+    .then((data) => {
+         showData(data)
+          
+    });
+    
  }
 
 loadAllData()
