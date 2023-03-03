@@ -24,35 +24,59 @@
   <body>
     <header class="text-center mt-5">
       <h1 class="text-3xl font-bold">Ai Universe Hub</h1>
-      
-      <button class=" border rounded-lg btn-primary text-2xl p-2 mt-5">Short By Date</button>
+
+      <button class="border rounded-lg btn-primary text-2xl p-2 mt-5">
+        Short By Date
+      </button>
     </header>
-      <main>
+    <main>
+      <section id="spinner" class="mt-10 hidden">
+        <div class="flex items-center justify-center">
+          <div
+            class="h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status"
+          >
+            <span
+              class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+              >Loading...</span
+            >
+          </div>
+        </div>
+      </section>
+      <section
+        id="card-container"
+        class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 m-10"
+      ></section>
 
-        <section id="spinner" class="mt-10 hidden">
-            
-            <div class="flex items-center justify-center ">
-                <div
-                  class=" h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                  role="status">
-                  <span
-                    class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-                    >Loading...</span
-                  >
-                </div>
-              </div>
-        </section>
-        <section id="card-container" class="mt-8 grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 m-10 ">
-            
-        </section>
-       
-        
-            <div class="text-center">
-                <button onclick="showAllData()" class="border rounded-lg btn-primary text-2xl p-2 mt-5 mb-3 ">Show More</button>
+      <div class="text-center">
+        <button
+          onclick="showAllData()"
+          class="border rounded-lg btn-primary text-2xl p-2 mt-5 mb-3"
+        >
+          Show More
+        </button>
+      </div>
+      
+      
+      <section>
+      <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+        <div class="modal p-10">
+        <div class="modal-box w-11/12 max-w-5xl relative">
+          <label
+            for="my-modal-3"
+            class="btn btn-sm btn-circle absolute right-2 top-0 right-0"
+            >✕</label
+          >
 
-            </div>
+          <div id="modal-details">
+            
+          </div>
+
          
-      </main>
+        </div>
+      </div>
+      </section>
+    </main>
     <script src="js/aiuniverse.js"></script>
   </body>
 </html>
