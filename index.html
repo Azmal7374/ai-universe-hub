@@ -5,14 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 6</title>
+
+    <!-- add daisyUi cdn link -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@2.51.0/dist/full.css"
       rel="stylesheet"
       type="text/css"
     />
+    <!-- change daisyUi deafult background color -->
     <html data-theme="cupcake"></html>
+    <!-- add tailwind cdn link -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- add fontawesome cdn link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -22,14 +27,20 @@
     />
   </head>
   <body>
+    <!-- header start -->
     <header class="text-center mt-5">
       <h1 class="text-3xl font-bold">Ai Universe Hub</h1>
 
-      <button onclick="shortDate()" class="bg-rose-600 rounded-lg  text-2xl p-2 mt-5 text-white">
+      <!-- short by date button -->
+      <button
+        onclick="shortDate()"
+        class="bg-rose-600 rounded-lg text-2xl p-2 mt-5 text-white"
+      >
         Short By Date
       </button>
     </header>
     <main>
+      <!-- Spinner section -->
       <section id="spinner" class="mt-10 hidden">
         <div class="flex items-center justify-center">
           <div
@@ -43,11 +54,14 @@
           </div>
         </div>
       </section>
+
+      <!-- card section -->
       <section
         id="card-container"
         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 m-10"
       ></section>
 
+      <!-- show all card button -->
       <div class="text-center">
         <button
           onclick="showAllData()"
@@ -57,6 +71,7 @@
         </button>
       </div>
 
+      <!-- modal  section-->
       <section>
         <input type="checkbox" id="my-modal-3" class="modal-toggle" />
         <div class="modal p-10">
@@ -67,14 +82,13 @@
               >✕</label
             >
 
-          
-            <div id="modal-details">
-
-            </div>
+            <div id="modal-details"></div>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- add js file -->
     <script src="js/aiuniverse.js"></script>
   </body>
 </html>

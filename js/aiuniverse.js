@@ -1,14 +1,18 @@
 
 let itemCount = 6;
 let allTools = [];
+
+// loadAllData function  here
 const loadAllData = () =>{
     const URL =`https://openapi.programming-hero.com/api/ai/tools`
     const spinnerContainer = document.getElementById('spinner');
+    // add spinner before data loads
     spinnerContainer.classList.remove('hidden')
 
     fetch(URL)
     .then(res => res.json())
     .then((data) => {
+    // remove spinner after data loads
     spinnerContainer.classList.add('hidden')
       allTools = data.data.tools;
          showData(data.data.tools,itemCount)
@@ -19,6 +23,7 @@ const loadAllData = () =>{
 };
 
 
+//showData work oon show limited card and details
 const showData = (tools, itemCount) =>{
   // console.log(datas.data.tools);
 const conatiner = document.getElementById('card-container');
@@ -66,6 +71,8 @@ conatiner.innerHTML = "";
   })
  }
 
+
+ //showAllData function work click show more button then show all card
  const  showAllData = () => {
     itemCount =allTools.length;
     showData(allTools, itemCount)
@@ -74,7 +81,7 @@ conatiner.innerHTML = "";
  }
 
 
-  
+// loadAi details function here  
 const loadAiDetails =async(id) =>{
        const URL =` https://openapi.programming-hero.com/api/ai/tool/${id}`
 
@@ -91,6 +98,7 @@ const loadAiDetails =async(id) =>{
     
 }
 
+//displayApiDetails function show modal , some card and Api description on card
 const displayAiDetails = (tool) => {
   console.log(tool
     );
@@ -147,9 +155,11 @@ ${ pricing !== null ?  pricing[2].plan : "Not found" } </h1>
           <h1 class="font-bold mt-3 text-2xl">Integrations</h1>
           <p class="${ integrations === null ?  'block' : "hidden"}">No data Found</p>
           <ul class=" ${ integrations === null ?  'hidden' : ''} list-disc ml-6 mt-3">
-            <li>${integrations !== null &&  integrations[0] !== undefined ?  integrations[0] : "Not Found"}</li>
-            <li>${integrations !== null &&  integrations[1] !== undefined ?  integrations[1] : "Not Found"}</li>
-            <li>${integrations !== null &&  integrations[2] !== undefined ?  integrations[2] : "Not Found"}</li>
+            <li class="${integrations !== null &&  integrations[0] !== undefined ?  integrations[0] : "hidden"}"">${integrations !== null &&  integrations[0] !== undefined ?  integrations[0] : "Not Found"}</li>
+
+            <li class="${integrations !== null &&  integrations[1] !== undefined ?  integrations[1] : "hidden"}">${integrations !== null &&  integrations[1] !== undefined ?  integrations[1] : "Not Found"}</li>
+
+            <li class="${integrations !== null &&  integrations[1] !== undefined ?  integrations[2] : "hidden"}"">${integrations !== null &&  integrations[2] !== undefined ?  integrations[2] : "Not Found"}</li>
             
           </ul>
         </div>
@@ -180,6 +190,8 @@ ${ pricing !== null ?  pricing[2].plan : "Not found" } </h1>
   
 };
 
+
+//shortDate function show all card maintain by order
 const shortDate = () => {
   // allTools =data.tools;
   // console.log(allTools);
@@ -192,9 +204,8 @@ const shortDate = () => {
   showData(allTools, itemCount)
 
 }
-// const result =shortDate()
-// console.log(result);
 
+//call load more function
 loadAllData()
 
 
