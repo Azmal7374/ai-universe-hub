@@ -92,7 +92,8 @@ const loadAiDetails =async(id) =>{
 }
 
 const displayAiDetails = (tool) => {
-  console.log(tool.features[1]);
+  console.log(tool
+    );
 
    
   const apiDetails = document.getElementById("modal-details");
@@ -104,48 +105,48 @@ const displayAiDetails = (tool) => {
   class="w-50 grid grid-cols-1 md:grid-cols-2 gap-5 lg:m-10 lg:p-10"
 >
   <div
-    class="card w-96 bg-rose-100 shadow-xl border rounded-lg border-rose-400 mx-auto"
+    class="card w-96 bg-rose-100 shadow-xl border rounded-lg border-rose-400 sm:mx-auto"
   >
     <div class="card-body">
-      <h2 class="card-title sm:ml-16">${tool.description ? tool.description : "Description not found"}</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+      <h2 class="sm:ml-16 lg:ml-0 text-2xl font-bold">${tool.description ? tool.description : "Description not found"}</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-3">
         <div
-          class="bg-neutral-50 sm:w-1/2 lg:w-1/3 h-full p-4 text-center rounded-md sm:ml-16 ml-8"
+          class="bg-neutral-50 sm:w-1/2 lg:w-24 h-full  rounded-md sm:ml-16 lg:ml-0 text-center"
         >
-          <h1>${tool.pricing[0]? tool.pricing[0].price : "Not found" } <br>
-          ${tool.pricing[0]? tool.pricing[0].plan : "Not found" } </h1>
+<h1 class="text-green-400 font-bold lg:mt-8">${tool.pricing[0]? tool.pricing[0].price : "Free Of Cost" } <br>
+${tool.pricing[0]? tool.pricing[0].plan : "Not found" } </h1>
         </div>
         <div
-          class="bg-neutral-50 sm:w-1/2 lg:w-1/3 h-full p-4 text-center rounded-md sm:ml-16 ml-8"
+          class="bg-neutral-50 sm:w-1/2 lg:w-24 h-full  text-center rounded-md sm:ml-16 lg:ml-0"
         >
-          <h1>${tool.pricing[1]? tool.pricing[1].price : "Not found" } <br>
-          ${tool.pricing[1]? tool.pricing[1].plan : "Not found" } </h1>
+          <h1 class="text-pink-400 font-bold lg:mt-8">${tool.pricing[1]? tool.pricing[1].price :  "Free Of Cost" } <br>
+${tool.pricing[1]? tool.pricing[1].plan : "Not found" } </h1>
         </div>
         <div
-          class="bg-neutral-50 sm:w-1/2 lg:w-1/3 h-full p-4 text-center rounded-md sm:ml-16 ml-8"
+          class="bg-neutral-50 sm:w-1/2 lg:w-24 h-full p-4 text-center rounded-md sm:ml-16 lg:ml-0"
         >
-        <h1>${tool.pricing[2]? tool.pricing[2].price : "Not found" } <br>
-        ${tool.pricing[2]? tool.pricing[2].plan : "Not found" } </h1>
-          
+           <h1 class="text-blue-400 font-bold">${tool.pricing[2]? tool.pricing[2].price : "Free Of Cost" } <br>
+${tool.pricing[2]? tool.pricing[2].plan : "Not found" } </h1>
+
         </div>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:mx-auto">
         <div>
-          <h1 class="font-bold">Features</h1>
-          <ul class="list-disc">
-            <li>${tool.features[1].feature_name ? tool.features[1].feature_name : "Not Found"}</li>
-            <li>Mitu</li>
-            <li>Tumi</li>
-            
+          <h1 class="font-bold mt-3">Features</h1>
+          <ul class="list-disc ml-6 mt-3 ">
+            <li>${tool.features[1]? tool.features[1].feature_name : "Not Found"}</li>
+  <li>${tool.features[2]? tool.features[2].feature_name : "Not Found"}</li>
+  <li>${tool.features[3]? tool.features[3].feature_name : "Not Found"}</li>
+  
           </ul>
         </div>
         <div>
-          <h1 class="font-bold">Integrations</h1>
-          <ul class="list-disc">
-            <li>Azmal</li>
-            <li>Mitu</li>
-            <li>Tumi</li>
- 
+          <h1 class="font-bold mt-3">Integrations</h1>
+          <ul class="list-disc ml-6 mt-3  ">
+            <li>${tool.integrations[0] ? tool.integrations[0] : "Not Found"}</li>
+            <li>${tool.integrations[1] ? tool.integrations[1] : "Not Found"}</li>
+            <li>${tool.integrations[2] ? tool.integrations[2] : "Not Found"}</li>
+            
           </ul>
         </div>
       </div>
@@ -154,19 +155,18 @@ const displayAiDetails = (tool) => {
   <div
     class="card w-96 bg-base-100 shadow-xl border rounded-lg border-gray-200 mx-auto"
   >
-    <figure><img class="relative" src="" alt="Shoes" /></figure>
+    <figure><img class="relative" src="${tool.image_link[0] ? tool.image_link[0] : tool.image_link[0] }" alt="Shoes" /></figure>
     <div class="card-body">
       <h2 class="font-3xl font-bold text-center ">Hi,how are you doing today?</h2>
       <p class="text-center">Lorem ipsum dolor sit amet, consectetur</p>
       <div class="card-actions justify-end absolute top-1 right-1">
-        <button class="border rounded-lg btn-primary p-2">
+        <button class="accuracy-btn border rounded-lg btn-primary p-2 hidden">
           95% accuracy
         </button>
       </div>
     </div>
   </div>
-</div>
-  
+</div> 
   
   `
    apiDetails.appendChild(div);
