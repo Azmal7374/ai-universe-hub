@@ -145,10 +145,11 @@ ${ pricing !== null ?  pricing[2].plan : "Not found" } </h1>
         </div>
         <div>
           <h1 class="font-bold mt-3 text-2xl">Integrations</h1>
-          <ul class="list-disc ml-6 mt-3  ">
-            <li>${ integrations !== null ?  integrations[0] : "Not Found"}</li>
-            <li>${ integrations !== null ?  integrations[1] : "Not Found"}</li>
-            <li>${ integrations !== null ?  integrations[2] : "Not Found"}</li>
+          <p class="${ integrations === null ?  'block' : "hidden"}">No data Found</p>
+          <ul class=" ${ integrations === null ?  'hidden' : ''} list-disc ml-6 mt-3">
+            <li>${integrations !== null &&  integrations[0] !== undefined ?  integrations[0] : "Not Found"}</li>
+            <li>${integrations !== null &&  integrations[1] !== undefined ?  integrations[1] : "Not Found"}</li>
+            <li>${integrations !== null &&  integrations[2] !== undefined ?  integrations[2] : "Not Found"}</li>
             
           </ul>
         </div>
@@ -158,7 +159,7 @@ ${ pricing !== null ?  pricing[2].plan : "Not found" } </h1>
   <div
     class="card w-96 bg-base-100 shadow-xl border rounded-lg border-gray-200 mx-auto"
   >
-    <figure class="p-7"><img class="relative border rounded-lg w-100 h-96" src="${ image_link[0] ?  image_link[0] :  image_link[1] }" alt="Shoes" /></figure>
+    <figure class="p-7"><img class="relative border rounded-lg w-100 h-80" src="${ image_link[0] ?  image_link[0] :  image_link[1] }" alt="Shoes" /></figure>
     <div class="card-body">
       <h2 class="font-3xl font-bold text-center text-2xl ">
       ${ input_output_examples !== null ?  input_output_examples[0].input : "Can you give any examples?"}</h2>
