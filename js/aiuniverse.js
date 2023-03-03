@@ -119,24 +119,24 @@ const displayAiDetails = (tool) => {
     class="card w-96 bg-rose-100 shadow-xl border rounded-lg border-rose-400 sm:mx-auto"
   >
     <div class="card-body">
-      <h2 class="sm:ml-16 lg:ml-0 text-2xl font-bold">${ description !== null ?  description : "Description not found"}</h2>
+      <h2 class="sm:ml-16 lg:ml-0 md:text-2xl font-bold sm:p-7 break-word">${ description !== null ?  description : "Description not found"}</h2>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-3">
         <div
-          class="bg-neutral-50 sm:w-1/2 lg:w-24 h-full  rounded-md sm:ml-16 lg:ml-0 text-center"
+          class="bg-neutral-50 w-40 md:w-1/2 lg:w-24 h-full  rounded-md sm:ml-16 lg:ml-0 text-center"
         >
 <h1 class="text-green-400 font-bold lg:mt-8">${ pricing !== null ?  pricing[0].price : "Free Of Cost" } <br>
 ${ pricing !== null ?  pricing[0].plan : "Not found" } </h1>
         </div>
         <div
-          class="bg-neutral-50 sm:w-1/2 lg:w-24 h-full  text-center rounded-md sm:ml-16 lg:ml-0"
+          class="bg-neutral-50 w-40 md:w-1/2 lg:w-24 h-full  text-center rounded-md sm:ml-16 lg:ml-0"
         >
-          <h1 class="text-pink-400 font-bold lg:mt-8">${ pricing !== null?  pricing[1].price :  "Free Of Cost" } <br>
+          <h1 class="text-pink-400 font-bold lg:mt-8 break-word">${ pricing !== null?  pricing[1].price :  "Free Of Cost" } <br>
 ${ pricing !== null?  pricing[1].plan : "Not found" } </h1>
         </div>
         <div
-          class="bg-neutral-50 sm:w-1/2 lg:w-24 h-full p-4 text-center rounded-md sm:ml-16 lg:ml-0"
+          class="bg-neutral-50  w-40 md:w-1/2 lg:w-24 p-4 text-center rounded-md sm:ml-16 lg:ml-0"
         >
-           <h1 class="text-blue-400 font-bold">${ pricing !== null ?  pricing[2].price : "Free Of Cost" } <br>
+           <h1 class="text-blue-400 font-bold break-word">${ pricing !== null ?  pricing[2].price : "Free Of Cost" } <br>
 ${ pricing !== null ?  pricing[2].plan : "Not found" } </h1>
 
         </div>
@@ -167,16 +167,16 @@ ${ pricing !== null ?  pricing[2].plan : "Not found" } </h1>
     </div>
   </div>
   <div
-    class="card w-96 bg-base-100 shadow-xl border rounded-lg border-gray-200 mx-auto"
+    class="card w-96 bg-base-100 shadow-xl border rounded-lg border-gray-200 md:mx-auto"
   >
-    <figure class="p-7"><img class="relative border rounded-lg w-100 h-80" src="${ image_link[0] ?  image_link[0] :  image_link[1] }" alt="Shoes" /></figure>
+    <figure class="md:p-7 py-7"><img class="relative border rounded-lg sm:w-44 md:w-100 h-40 md:h-80 sm:mr-32" src="${ image_link[0] ?  image_link[0] :  image_link[1] }" alt="Shoes" /></figure>
     <div class="card-body">
-      <h2 class="font-3xl font-bold text-center text-2xl ">
+      <h2 class=" font-bold text-center md:text-2xl ">
       ${ input_output_examples !== null ?  input_output_examples[0].input : "Can you give any examples?"}</h2>
       <p class="text-center">
       ${ input_output_examples !== null ?  input_output_examples[0].output : "No! Not Yet! Take a break"}
       </p>
-      <div class="card-actions justify-end absolute top-9 right-9">
+      <div class="card-actions justify-end absolute top-9 right-16 md:right-9">
         <button class=" ${ accuracy.score === null ? 'hidden' : '' } accuracy-btn  rounded-lg bg-rose-600 p-2 text-white">
         ${ accuracy.score !== null ?  accuracy.score * 100 + '% accuracy' : "null"}
         </button>
