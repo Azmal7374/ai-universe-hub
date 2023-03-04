@@ -30,7 +30,7 @@ const conatiner = document.getElementById('card-container');
 conatiner.innerHTML = "";
   tools.slice(0,itemCount).forEach((tool)=>{
     // console.log(tool);
-    const{image,features,published_in,id} =tool
+    const{image,features,published_in,id,name} =tool
     const div = document.createElement('div');
     div.innerHTML =`
     <div class="card w-50 h-full bg-base-100 shadow-xl border border-gray-300">
