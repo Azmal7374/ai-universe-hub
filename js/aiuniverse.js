@@ -167,16 +167,16 @@ ${ pricing !== null ?  pricing[2].plan : "Not found" } </h1>
     </div>
   </div>
   <div
-    class="card w-96 bg-base-100 shadow-xl border rounded-lg border-gray-200 md:mx-auto"
+    class="card w-96 bg-base-100 shadow-xl border rounded-lg border-gray-200 mx-auto"
   >
-    <figure class="md:p-7 py-7"><img class="relative border rounded-lg sm:w-44 md:w-100 h-40 md:h-80 sm:mr-32" src="${ image_link[0] ?  image_link[0] :  image_link[1] }" alt="Shoes" /></figure>
+    <figure class="md:p-7 sm:py-7"><img class="relative border rounded-lg sm:w-44 md:w-96  h-40 md:h-80 sm:mr-32 md:mr-0" src="${ image_link[0] ?  image_link[0] :  image_link[1] }" alt="Shoes" /></figure>
     <div class="card-body">
       <h2 class=" font-bold md:text-center md:text-2xl ">
       ${ input_output_examples !== null ?  input_output_examples[0].input : "Can you give any examples?"}</h2>
       <p class="md:text-center">
       ${ input_output_examples !== null ?  input_output_examples[0].output : "No! Not Yet! Take a break"}
       </p>
-      <div class="card-actions justify-end absolute top-9 right-16 md:right-9">
+      <div class="card-actions justify-end absolute top-4 md:top-9 right-16 md:right-9">
         <button class=" ${ accuracy.score === null ? 'hidden' : '' } accuracy-btn  rounded-lg bg-rose-600 p-2 text-white">
         ${ accuracy.score !== null ?  accuracy.score * 100 + '% accuracy' : "null"}
         </button>
